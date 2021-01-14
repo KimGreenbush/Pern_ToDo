@@ -116,3 +116,7 @@ dist
 !.vscode/launch.json
 !.vscode/extensions.json
 *.code-workspace
+.vscode/settings.json
+
+server/package-lock.json
+client/package-lock.json
