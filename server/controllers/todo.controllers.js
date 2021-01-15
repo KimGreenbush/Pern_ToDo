@@ -1,4 +1,13 @@
-const pool = require("./db");
+const pool = require("../db");
+
+module.exports.allTodos = async (req, res) => {
+	try {
+		const allTodos = await pool.query("SELECT * FROM todo");
+		res.json(allTodos.rows);
+	} catch (err) {
+		console.error(err.message);
+	}
+}
 
 module.exports.createTodo = async(req, res) => {
     try {
@@ -8,15 +17,6 @@ module.exports.createTodo = async(req, res) => {
     } catch (err) {
         console.error(err.message)
     }
-}
-
-module.exports.allTodos = async (req, res) => {
-	try {
-		const allTodos = await pool.query("SELECT * FROM todo");
-		res.json(allTodos.rows);
-	} catch (err) {
-		console.error(err.message);
-	}
 }
 
 module.exports.oneTodo = async (req, res) => {
