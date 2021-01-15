@@ -3,7 +3,7 @@ const app = express()
 const cors = require("cors")
 
 //DB connection
-
+require("./config/sequelize.config")
 app.use(cors())
 app.use(express.json())
 
@@ -11,5 +11,5 @@ app.use(express.json())
 require("./routes/todo.routes")(app)
 
 app.listen(8001, () => {
-    console.log("server has started on port")
+    console.log("Server has started on port 8001")
 })

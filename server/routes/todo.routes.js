@@ -1,4 +1,4 @@
-const todoController = require("../controllers/todo.controller.js")
+const todoController = require("../controllers/todo.controllers")
 
 module.exports = app => {
     // display all
