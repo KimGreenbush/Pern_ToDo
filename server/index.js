@@ -3,7 +3,7 @@ const app = express()
 const cors = require("cors")
 
 //DB connection
-require("./models/todo.model")
+require("./config/sequelize.config")
 app.use(cors())
 app.use(express.json())
 
