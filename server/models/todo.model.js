@@ -1,8 +1,8 @@
-const { Sequelize } = require("sequelize");
+const { Sequelize, DataTypes } = require("sequelize");
 const sequelize = new Sequelize("postgres://postgres:root@localhost:5432/perntodo");
 
-// DB Connectio test
-async function connect() {
+// DB Connection test
+async () => {
 	try {
 		await sequelize.authenticate();
 		console.log("Connection has been established by Sequelize");
@@ -12,4 +12,19 @@ async function connect() {
 		sequelize.close();
 	}
 }
-connect();
+// connect()
+
+//models
+const Todo = sequelize.define("Todo", {
+	uuid: {
+		type: DataTypes.UUID,
+		defaultValue: Sequelize.UUIDV4 // Or Sequelize.UUIDV1
+	},
+	description: {
+		type: DataTypes.STRING,
+		allowNull: false
+	}
+})
+
+	console.log(Todo)
+	console.log(sequelize.models.Todo)
