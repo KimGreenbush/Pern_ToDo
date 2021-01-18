@@ -2,7 +2,7 @@ const { Sequelize, DataTypes } = require("sequelize")
 const sequelize = new Sequelize("postgres://postgres:root@localhost:5432/perntodo")
 
 // DB Connection test
-async () => {
+async function connect() {
 	try {
 		await sequelize.authenticate();
 		console.log("Connection has been established by Sequelize");
@@ -12,3 +12,4 @@ async () => {
 		sequelize.close();
 	}
 }
+connect()
