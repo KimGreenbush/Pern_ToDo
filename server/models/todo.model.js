@@ -1,9 +1,11 @@
 const { Sequelize, DataTypes } = require("sequelize")
-const sequelize = new Sequelize("postgres://postgres:root@localhost:5432/perntodo")
+const sequelize = new Sequelize("postgres://postgres:root@localhost:5432/perntododb")
 
-module.exports.Todo = sequelize.define("Todo", {
+const Todo = sequelize.define("todo", {
 	description: {
 		type: DataTypes.STRING,
-		allowNull: false
+		allowNull: false,
 	}
 })
+
+module.exports = Todo

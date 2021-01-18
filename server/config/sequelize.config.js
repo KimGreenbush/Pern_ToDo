@@ -1,5 +1,5 @@
-const { Sequelize, DataTypes } = require("sequelize")
-const sequelize = new Sequelize("postgres://postgres:root@localhost:5432/perntodo")
+const { Sequelize } = require("sequelize")
+const sequelize = new Sequelize("postgres://postgres:root@localhost:5432/perntododb", { logging: (...msg) => console.log(msg)})
 
 // DB Connection test
 async function connect() {
