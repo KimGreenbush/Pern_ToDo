@@ -11,4 +11,5 @@ Learning how to swap from **MongoDB**, a non-relational database, to **PostgreSQ
 - [ ] Set up front end client
 - [ ] Create simple Todo form and display
 - [ ] Connect front and back
+- [ ] Add second model for relationships
 - [ ] TEST
