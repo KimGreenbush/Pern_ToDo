@@ -5,7 +5,11 @@ const Todo = sequelize.define("todo", {
 	description: {
 		type: DataTypes.STRING,
 		allowNull: false,
-	}
+	},
 })
+
+async () => {
+	await Todo.sync({ alter: true })
+}
 
 module.exports = Todo
